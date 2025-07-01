@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Message from './message'
+import Message from './Message'
 import { useConversationsContext } from './Context/ConversationContext'
 import { useSelectedUserContext } from './Context/SelectedUserContext'
 import useGetMessages from './hooks/useGetMessages'
