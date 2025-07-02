@@ -15,7 +15,8 @@ const useSignup = () => {
             const res = await fetch("https://chatx-real-time-chat-app-backend.onrender.com/api/register",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
-                body: JSON.stringify({fullname,password,confirmPassword,username,gender})
+                body: JSON.stringify({fullname,password,confirmPassword,username,gender}),
+                credentials: "include",
             })
 
             const data = await res.json();

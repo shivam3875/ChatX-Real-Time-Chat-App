@@ -13,6 +13,7 @@ const useLogout = () => {
         const res = await fetch("https://chatx-real-time-chat-app-backend.onrender.com/api/logout",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
+            credentials:"include"
         })
 
         const data = await res.json();
