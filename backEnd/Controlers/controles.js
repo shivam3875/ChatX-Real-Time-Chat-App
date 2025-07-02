@@ -34,14 +34,13 @@ export const Register = async (req,res) =>{
         if(newUser){
             await newUser.save();
             gettokenandsetcookie(newUser._id, res);
-        }
-
-        res.status(201).json({
+            res.status(201).json({
             _id:newUser._id,
             fullname:newUser.fullname,
             username:newUser.username,
             profilepic:newUser.profilepic,
         });
+        }
         
     }
     catch(err){
@@ -68,7 +67,6 @@ export const Login = async (req,res) =>{
         }
 
         gettokenandsetcookie(user._id,res);
-        
         res.status(201).json({
             _id:user._id,
             fullname:user.fullname,
