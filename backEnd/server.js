@@ -5,6 +5,7 @@ import { connectToDB } from "./DB/connectToDB.js";
 import MessageRoutes from "./Routes/messageRoutes.js"
 import cookieParser from "cookie-parser";
 import UserRoutes from "./Routes/userRouts.js"
+import cors from 'cors'
 
 
 dotenv.config();
@@ -12,6 +13,7 @@ const Port = process.env.PORT || 5001;
 
 import {app,server} from "./sockets/socket.js"
 
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser())
 
