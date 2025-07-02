@@ -10,7 +10,7 @@ const useConversations = () => {
     setloading(true)
     try{
         const res = await fetch("https://chatx-real-time-chat-app-backend.onrender.com/api/getusers",{
-            method:"Post",
+            method:"POST",
             headers:{"Content-Type":"application/json"},
             credentials: "include",
         })

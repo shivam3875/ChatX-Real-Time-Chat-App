@@ -12,7 +12,7 @@ const useSendMessage = () => {
     setloading(true);
     try{
       const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/sendmessage/${receiverid}`,{
-        method:"Post",
+        method:"POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({message}),
         credentials: "include",
