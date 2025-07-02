@@ -14,7 +14,8 @@ const useSendMessage = () => {
       const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/sendmessage/${receiverid}`,{
         method:"Post",
         headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({message})
+        body: JSON.stringify({message}),
+        credentials: "include",
       })
 
       const data = await res.json();

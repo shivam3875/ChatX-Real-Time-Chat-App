@@ -17,8 +17,8 @@ export const Register = async (req,res) =>{
             return res.status(400).json({error:"username already exist"}); 
         }
 
-        const boyimage=`https://avatar.iran.liara.run/public/boy?username=${username}t`
-        const girlimage=`https://avatar.iran.liara.run/public/girl?username=${username}t`
+        const boyimage=`https://avatar.iran.liara.run/public/boy?username=${username}`
+        const girlimage=`https://avatar.iran.liara.run/public/girl?username=${username}`
 
         const salt =await bcrypt.genSalt(10);
         const hashpassword = await bcrypt.hash(password, salt);
@@ -32,8 +32,8 @@ export const Register = async (req,res) =>{
         })
 
         if(newUser){
-            gettokenandsetcookie(newUser._id,res);
             await newUser.save();
+            gettokenandsetcookie(newUser._id, res);
         }
 
         res.status(201).json({

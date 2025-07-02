@@ -13,7 +13,9 @@ const useGetMessages = () => {
 
     setloading(true);
     try{
-        const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/getmessage/${selectedid}`)
+        const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/getmessage/${selectedid}`,{
+            credentials: "include",
+        })
 
         const data = await res.json();
         if(data.error){
