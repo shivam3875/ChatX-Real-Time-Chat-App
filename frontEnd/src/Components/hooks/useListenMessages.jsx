@@ -1,28 +1,3 @@
-// import { useEffect, useState } from 'react'
-// import { useConversationsContext } from '../Context/ConversationContext';
-// import { useSocketContext } from '../Context/SocketCoontext';
-
-// const useListenMessages = () => {
-
-//     const {socket}=useSocketContext();
-//     const {selectedconvo,setselectedconvo}=useConversationsContext();
-
-//     console.log("rumming2....")
-
-//     useEffect(()=>{
-//         socket?.on("message",(message)=>{
-//             console.log("rumming....")
-//             setselectedconvo([...selectedconvo,message]);
-//         })
-
-//         return ()=> socket?.off("message");
-//     },[socket,selectedconvo,setselectedconvo])
-
-// }
-
-// export default useListenMessages;
-
-
 import { useEffect } from 'react';
 import { useConversationsContext } from '../Context/ConversationContext';
 import { useSocketContext } from '../Context/SocketCoontext';

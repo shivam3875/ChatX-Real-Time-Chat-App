@@ -12,7 +12,7 @@ const useLogin = () => {
         if(!success) return;
         setloading(true);
         try{
-            const res = await fetch("/api/login",{
+            const res = await fetch("https://chatx-real-time-chat-app-backend.onrender.com/api/login",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({password,username})
