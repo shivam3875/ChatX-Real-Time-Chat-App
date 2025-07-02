@@ -13,6 +13,8 @@ const Port = process.env.PORT || 5001;
 
 import {app,server} from "./sockets/socket.js"
 
+app.set('trust proxy', 1);
+
 app.use(cors({
     origin:"https://chatx-real-time-chat-app-frontend.onrender.com",
     credentials:true,
