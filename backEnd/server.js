@@ -13,7 +13,10 @@ const Port = process.env.PORT || 5001;
 
 import {app,server} from "./sockets/socket.js"
 
-app.use(cors());
+app.use(cors({
+    origin:"https://chatx-real-time-chat-app-frontend.onrender.com",
+    credentials:true,
+}));
 app.use(express.json());
 app.use(cookieParser())
 
