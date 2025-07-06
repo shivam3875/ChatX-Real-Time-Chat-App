@@ -13,10 +13,20 @@ const Port = process.env.PORT || 5001;
 
 import {app,server} from "./sockets/socket.js"
 
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+export default cloudinary;
+
 app.set('trust proxy', 1);
 
 app.use(cors({
-    origin:"https://chatx-real-time-chat-app-frontend.onrender.com",
+    origin:["https://chatx-real-time-chat-app-frontend.onrender.com","http://localhost:5173"],
     credentials:true,
 }));
 app.use(express.json());

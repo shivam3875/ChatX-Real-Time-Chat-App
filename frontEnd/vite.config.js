@@ -6,7 +6,8 @@ export default defineConfig({
   server:{
     proxy:{
       "/api":{
-        target:"https://chatx-real-time-chat-app-backend.onrender.com",
+        // target:"https://chatx-real-time-chat-app-backend.onrender.com",
+        target:"http://localhost:5000",
       },
     },
   },
