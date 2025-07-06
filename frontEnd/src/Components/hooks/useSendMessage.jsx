@@ -11,7 +11,7 @@ const useSendMessage = () => {
 
     setloading(true);
     try{
-      const res= await fetch(`http://localhost:5000/api/sendmessage/${receiverid}`,{
+      const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/sendmessage/${receiverid}`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({message}),
