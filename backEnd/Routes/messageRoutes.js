@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/api/sendmessage/:id",protectRoute,sendMessage);
 
-router.post("/api/sendimagemessage/:id",protectRoute,upload.single("image"),sendImageMessage);
+router.post("/api/sendimagemessage/:id",protectRoute,upload.single("file"),sendImageMessage);
 
 router.get("/api/getmessage/:id",protectRoute,getMessage);
 

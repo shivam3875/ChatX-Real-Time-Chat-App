@@ -43,13 +43,12 @@ const Massages = () => {
         <ChatSkeleton/>
       </> :
       selectedconvo.map((message, idx) => (
-        <div
-          key={message._id}
-          ref={idx === selectedconvo.length - 1 ? lastmessageref : null}
-        >
-          {(!message.image || message.image === "")
+        <div key={message._id} ref={idx === selectedconvo.length - 1 ? lastmessageref : null} >
+
+          {((!message.image || message.image === "") && (!message.pdf || message.pdf.url===""))
             ? <Message message={message} />
-            // : <ImageBubble message={message} />
+            : (!message.pdf || message.pdf.url==="")
+            ? <ImageBubble message={message} />
             : <PDFBubble message={message} />
           }
         </div>

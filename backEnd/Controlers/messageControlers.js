@@ -59,6 +59,7 @@ export const sendImageMessage = async (req,res) => {
         const {id:receiverId} = req.params;
         const senderId = req.user._id;
         const message = req.body.message;
+        const pdfName = req.body.fileName || "Document";
 
         let converation = await Conversation.findOne({
             participants:{$all:[senderId, receiverId]},
@@ -72,16 +73,33 @@ export const sendImageMessage = async (req,res) => {
 
         // Cloudinary par upload karo
         const result = await cloudinary.uploader.upload(fileStr, {
-            resource_type: "image",
+            resource_type: "auto",
             tags: "chatx-image",
         });
 
-        const newMessage = new Message({
+        let messageData = {
             senderId,
             receiverId,
-            image:result.secure_url,
             message,
-        })
+        };
+
+        const { resource_type, format, secure_url, bytes, pages } = result;
+
+        if (resource_type === "image" && format!=="pdf") {
+            messageData.image = secure_url;
+        } else if (resource_type === "image" && format === "pdf") {
+            messageData.pdf = {
+                url: secure_url,
+                size: bytes,
+                noOfPages: pages || 0,
+                name:pdfName,
+            };
+        } else if (resource_type === "video") {
+            messageData.video = secure_url;
+        }
+
+        const newMessage = new Message(messageData);        
+
 
         if(newMessage){
             converation.messages.push(newMessage._id);

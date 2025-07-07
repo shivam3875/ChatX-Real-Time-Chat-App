@@ -18,11 +18,17 @@ const messageSchema = new Schema({
     image:{
         type:String,
         default:"",
+    },
+    pdf: {
+        url: { type: String, default: "" },
+        size: { type: Number, default: 0 },
+        noOfPages: { type: Number, default: 0 },
+        name:{type: String, default:""},
     }
+
 },{timestamps:true});
 
 
 const Message = mongoose.model("Message",messageSchema);
 
 export default Message;
-

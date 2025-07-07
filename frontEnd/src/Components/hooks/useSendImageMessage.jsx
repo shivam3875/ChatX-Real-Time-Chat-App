@@ -7,15 +7,17 @@ const useSendImageMessage = () => {
   const [loading,setloading] = useState(false);
   const {selectedconvo,setselectedconvo} = useConversationsContext()
 
-  const sendimagemessage= async (receiverid,file,message,setmessage)=>{
+  const sendimagemessage= async (receiverid,file,message,setmessage,setimage)=>{
 
     setloading(true);
     try{
 
       const formData = new FormData();
-      formData.append("image", file);
+      formData.append("file", file);
+      formData.append("fileName", file.name);
       formData.append("message", message);
       setmessage("");
+      setimage(null)
 
       const res= await fetch(`http://localhost:5000/api/sendimagemessage/${receiverid}`,{
         method:"POST",
