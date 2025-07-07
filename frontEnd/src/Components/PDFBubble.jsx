@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAuthContext } from './Context/AuthContext'
 import { useSelectedUserContext } from './Context/SelectedUserContext';
 import { extractTime } from '../Utils/extractTime';
@@ -51,9 +50,9 @@ const PDFBubble = ({message}) => {
                 <div className="chat-header">
                     <time className="text-xs text-white opacity-50">{extractTime(message.createdAt)}</time>
                 </div>
-                <div className="chat-bubble">
+                <div className="chat-bubble p-2 rounded-lg">
                     <div class="flex flex-col w-full max-w-[326px] leading-1.5 border-gray-200 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-                        <div class="flex items-start my-2.5 bg-gray-50 dark:bg-gray-600 rounded-md p-2">
+                        <div class="flex items-start bg-gray-50 dark:bg-gray-600 rounded-md p-2">
                             <div class="me-2">
                             <span class="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white pb-2">
                                 <svg fill="none" aria-hidden="true" class="w-5 h-5 shrink-0" viewBox="0 0 20 21">

@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoLogOutOutline } from "react-icons/io5";
 import useLogout from './hooks/useLogout';
 

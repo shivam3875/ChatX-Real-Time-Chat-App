@@ -19,6 +19,10 @@ const messageSchema = new Schema({
         type:String,
         default:"",
     },
+    video:{
+        type:String,
+        default:"",
+    },
     pdf: {
         url: { type: String, default: "" },
         size: { type: Number, default: 0 },

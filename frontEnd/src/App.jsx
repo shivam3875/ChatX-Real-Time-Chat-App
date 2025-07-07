@@ -1,11 +1,8 @@
-
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import {Routes,Route} from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-
-import React from "react";
 
 const  App = ()=> {
   return (

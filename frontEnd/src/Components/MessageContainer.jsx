@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useRef } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import Massages from './Massages'
 import { BsSend } from "react-icons/bs";
 import Nsc from './Nsc';
@@ -67,7 +67,7 @@ useEffect(() => {
 
         <label className="flex items-center gap-2 absolute left-8 group cursor-pointer" style={{ cursor: sending ? "not-allowed" : "pointer" }}>
           <VscAttach  color='black' size={20}/>
-          <input ref={fileInputRef} id="json-upload" type="file" accept="image/*,application/pdf" onChange={handleChange} disabled={sending} style={{ display: "none" }} />
+          <input ref={fileInputRef} id="json-upload" type="file" accept="image/*,video/*,application/pdf" onChange={handleChange} disabled={sending} style={{ display: "none" }} />
         </label>
 
         <input type="text" onChange={(e)=>{setmessage(e.target.value)}} value={message} disabled={sending}  placeholder="send a message..." className="input pt-0 pb-0 pl-10 input-bordered w-full pr-20" />

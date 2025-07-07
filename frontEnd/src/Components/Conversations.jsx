@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import ConversationCard from './ConversationCard'
 import { useUsersContext } from './Context/UsersContext'
 import useConversations from './hooks/useConversations'

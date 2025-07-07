@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import useGetMessages from './hooks/useGetMessages'
 import { useSelectedUserContext } from './Context/SelectedUserContext';
 import { useSocketContext } from './Context/SocketCoontext';

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAuthContext } from './Context/AuthContext'
 import { useSelectedUserContext } from './Context/SelectedUserContext';
 import { extractTime } from '../Utils/extractTime';
@@ -21,7 +20,7 @@ const Message = ({message})=> {
             <div className="chat-header">
                 <time className="text-xs text-white opacity-50">{extractTime(message.createdAt)}</time>
             </div>
-            <div className="chat-bubble file-name-span">{message.message}</div>
+            <div className="chat-bubble p-2 rounded-lg file-name-span">{message.message}</div>
         </div>
     </div>
   )

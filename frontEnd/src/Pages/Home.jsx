@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Sidebar from '../Components/Sidebar'
 import MessagesContainer from '../Components/MessageContainer'
 import { useAuthContext } from '../Components/Context/AuthContext'

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import  { useEffect, useRef, useState } from 'react'
 import Message from './Message'
 import { useConversationsContext } from './Context/ConversationContext'
 import { useSelectedUserContext } from './Context/SelectedUserContext'
@@ -8,6 +8,7 @@ import useListenMessages from './hooks/useListenMessages'
 import ImageBubble from './ImageBubble'
 import PDFBubble from './PDFBubble'
 import ChatSkeleton from './ChatSkeleton'
+import VideoBubble from './VideoBubbe'
 
 const Massages = () => {
 
@@ -45,12 +46,15 @@ const Massages = () => {
       selectedconvo.map((message, idx) => (
         <div key={message._id} ref={idx === selectedconvo.length - 1 ? lastmessageref : null} >
 
-          {((!message.image || message.image === "") && (!message.pdf || message.pdf.url===""))
+          {((!message.image || message.image === "") && (!message.pdf || message.pdf.url==="") && (!message.video || message.video===""))
             ? <Message message={message} />
-            : (!message.pdf || message.pdf.url==="")
+            : ((!message.pdf || message.pdf.url==="") && (!message.video || message.video===""))
             ? <ImageBubble message={message} />
+            : (!message.pdf || message.pdf.url==="")
+            ? <VideoBubble message={message} />
             : <PDFBubble message={message} />
           }
+
         </div>
       ))}      
     </div>

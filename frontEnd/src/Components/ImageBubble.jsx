@@ -47,9 +47,9 @@ const ImageBubble = ({message}) => {
                     <time className="text-xs text-white opacity-50">{extractTime(message.createdAt)}</time>
                 </div>
 
-                <div className="chat-bubble">
+                <div className="chat-bubble p-2 rounded-lg ">
                     <div class="flex flex-col w-full max-w-[326px] leading-1.5 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-                        <div class="group relative my-2.5">
+                        <div class="group relative">
                             <div
                                 class="absolute w-full h-full bg-gray-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                                 <button data-tooltip-target="download-image"
@@ -63,8 +63,8 @@ const ImageBubble = ({message}) => {
                                 </button>
                             </div>
                             <img src={message?.image}  class="rounded-lg" />
-                            {message.message}
                         </div>
+                        {message.message}
                     </div>
                 </div>
                 

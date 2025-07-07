@@ -1,4 +1,3 @@
-import React from 'react'
 import Searchbar from './Searchbar'
 import Conversations from './Conversations'
 import Logoutbutton from './Logoutbutton'

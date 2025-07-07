@@ -1,9 +1,8 @@
 import React from 'react'
 import GenderCheckBox from '../Components/GenderCheckBox'
-import { IoHandLeft } from 'react-icons/io5';
 import useSignup from '../Components/hooks/useSignup';
-import { AuthContext, useAuthContext } from '../Components/Context/AuthContext';
-import { Navigate, NavLink } from 'react-router-dom';
+import { useAuthContext } from '../Components/Context/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 const Signup = () => {
     const[inputs,setinputs]=React.useState({
