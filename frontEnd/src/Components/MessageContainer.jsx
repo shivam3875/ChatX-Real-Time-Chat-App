@@ -57,8 +57,8 @@ useEffect(() => {
       <div className=' bg-slate-50 h-14 pl-6 flex  items-center'><span className='text-2xl font-bold'>To: </span> <span className='text-2xl pr-6 font-bold truncate'>{selecteduser.username}</span></div>
       <Massages />
       {image && (
-        <div className="absolute left-7 bottom-16 bg-white pl-3 pr-8 py-1 rounded-t shadow text-gray-700 text-sm z-20">
-          <span className="font-medium">{image.name}</span>
+        <div className="absolute left-7 bottom-16 bg-white pl-3 pr-8 py-1 rounded-t shadow text-gray-700 text-sm z-20 max-w-[90%] ">
+          <span className="font-medium file-name-span">{image.name}</span>
               <button
                 type="button"
                 onClick={() => setimage(null)}

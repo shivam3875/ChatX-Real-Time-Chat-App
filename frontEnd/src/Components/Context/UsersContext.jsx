@@ -8,7 +8,7 @@ export const useUsersContext = () =>{
 }
 
 export const UsersContextProvider = ({children}) =>{
-    const [users,setUsers] = useState([]);
+    const [users,setUsers] = useState(null);
 
     return <UsersContext.Provider value={{users,setUsers}}>{children}</UsersContext.Provider>
 }

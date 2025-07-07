@@ -17,7 +17,7 @@ const useSendImageMessage = () => {
       formData.append("message", message);
       setmessage("");
 
-      const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/sendimagemessage/${receiverid}`,{
+      const res= await fetch(`http://localhost:5000/api/sendimagemessage/${receiverid}`,{
         method:"POST",
         body: formData,
         credentials: "include",

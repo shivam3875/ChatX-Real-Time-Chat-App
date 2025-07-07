@@ -13,7 +13,7 @@ const useGetMessages = () => {
 
     setloading(true);
     try{
-        const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/getmessage/${selectedid}`,{
+        const res= await fetch(`http://localhost:5000/api/getmessage/${selectedid}`,{
             credentials: "include",
         })
 

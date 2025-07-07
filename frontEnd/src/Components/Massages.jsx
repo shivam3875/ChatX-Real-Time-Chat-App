@@ -6,6 +6,8 @@ import useGetMessages from './hooks/useGetMessages'
 import { useSocketContext } from './Context/SocketCoontext'
 import useListenMessages from './hooks/useListenMessages'
 import ImageBubble from './ImageBubble'
+import PDFBubble from './PDFBubble'
+import ChatSkeleton from './ChatSkeleton'
 
 const Massages = () => {
 
@@ -34,10 +36,12 @@ const Massages = () => {
   }, [selectedconvo]);
 
   return (
-    <div className='h-96 overflow-y-auto w-full p-6  shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
+    <div className='h-96 overflow-y-auto w-full p-6  shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0  '>
       
 
-      {  selectedconvo===null ? <></> :
+      {  selectedconvo===null ? <>
+        <ChatSkeleton/>
+      </> :
       selectedconvo.map((message, idx) => (
         <div
           key={message._id}
@@ -45,7 +49,8 @@ const Massages = () => {
         >
           {(!message.image || message.image === "")
             ? <Message message={message} />
-            : <ImageBubble message={message} />
+            // : <ImageBubble message={message} />
+            : <PDFBubble message={message} />
           }
         </div>
       ))}      

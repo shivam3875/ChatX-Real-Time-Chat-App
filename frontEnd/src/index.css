@@ -9,3 +9,17 @@ body{
     background-position: center;
 }
 
+/* Chat bubble ke andar ke div ya text container par yeh properties lagayen */
+.chat-bubble div {
+  word-break: break-word;         /* Long words ko break kar dega */
+  overflow-wrap: break-word;      /* Modern browsers ke liye wrapping force karega */
+  white-space: normal;            /* Text ko normal tarike se wrap hone dega */
+}
+
+
+/* Apne CSS file mein */
+.file-name-span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
