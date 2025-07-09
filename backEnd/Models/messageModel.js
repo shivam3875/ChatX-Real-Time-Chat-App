@@ -23,6 +23,10 @@ const messageSchema = new Schema({
         type:String,
         default:"",
     },
+    audio:{
+        type:String,
+        default:"",
+    },
     pdf: {
         url: { type: String, default: "" },
         size: { type: Number, default: 0 },

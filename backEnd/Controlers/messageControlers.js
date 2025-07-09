@@ -83,6 +83,7 @@ export const sendImageMessage = async (req,res) => {
             message,
         };
 
+        console.log(result);
         const { resource_type, format, secure_url, bytes, pages } = result;
 
         if (resource_type === "image" && format!=="pdf") {
@@ -94,8 +95,10 @@ export const sendImageMessage = async (req,res) => {
                 noOfPages: pages || 0,
                 name:pdfName,
             };
-        } else if (resource_type === "video") {
+        } else if (resource_type === "video" && !result.is_audio ) {
             messageData.video = secure_url;
+        } else if (resource_type === "video" && result.is_audio ) {
+            messageData.audio = secure_url;
         }
 
         const newMessage = new Message(messageData);        

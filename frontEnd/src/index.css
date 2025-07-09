@@ -23,3 +23,11 @@ body{
   overflow-wrap: break-word;
   white-space: normal;
 }
+
+audio::-webkit-media-controls-timeline {
+
+  @media (max-width: 460px) {
+    display: none;
+  }
+
+}
