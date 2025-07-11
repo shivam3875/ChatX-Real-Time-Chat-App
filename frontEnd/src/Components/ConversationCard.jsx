@@ -13,13 +13,14 @@ const ConversationCard = ({user}) => {
   const {onlineusers}=useSocketContext();
   const isonline=onlineusers.includes(user._id);
 
-  useEffect(()=>{
+  const handleClick = () => {
     setselectedconvo(null);
-    getmessages(selecteduser?._id);
-  },[selecteduser])
+    setselecteduser(user);
+    getmessages(user._id); // Yahin se nayi chat fetch karo
+  };
 
   return (
-    <div onClick={()=>{setselectedconvo(null); setselecteduser(user);}} className={`flex items-center gap-3 ${(selecteduser!==null && selecteduser._id==user._id) ? 'bg-blue-400 text-black' : 'hover:bg-slate-300 text-white hover:text-blue-400'}  p-2 rounded-md `}>
+    <div onClick={handleClick} className={`flex items-center gap-3 ${(selecteduser!==null && selecteduser._id==user._id) ? 'bg-blue-400 text-black' : 'hover:bg-slate-300 text-white hover:text-blue-400'}  p-2 rounded-md `}>
         <div className={`avatar ${isonline ? "online" : "ofline"}`}>
             <div className="w-14 rounded-full">
                 <img src={user.profilepic} />
