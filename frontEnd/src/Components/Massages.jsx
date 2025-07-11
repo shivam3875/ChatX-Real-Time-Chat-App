@@ -12,21 +12,15 @@ const Massages = () => {
 
   const {selectedconvo} = useConversationsContext()
   const lastmessageref=useRef();
-  const [notfirst,setnotfirst]=useState(false);
 
   useListenMessages();
 
   useEffect(() => {
   if (!selectedconvo || selectedconvo.length === 0) return;
-  const lastMsg = selectedconvo[selectedconvo.length - 1];
-  const isImage = lastMsg.image || lastMsg.image !== "";
-
-  const delay = isImage && notfirst ? 1000 : 100; // 1s for image, 100ms for text
 
   const timer = setTimeout(() => {
     lastmessageref.current?.scrollIntoView({ behavior: "auto", block: "end" });
-    setnotfirst(true);
-  }, delay);
+  }, 0);
 
   return () => clearTimeout(timer);
   }, [selectedconvo]);
