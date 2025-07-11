@@ -24,7 +24,7 @@ const Massages = () => {
   const delay = isImage && notfirst ? 1000 : 100; // 1s for image, 100ms for text
 
   const timer = setTimeout(() => {
-    lastmessageref.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    lastmessageref.current?.scrollIntoView({ behavior: "auto", block: "end" });
     setnotfirst(true);
   }, delay);
 

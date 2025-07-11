@@ -18,7 +18,7 @@ const ConversationCard = ({user}) => {
   },[selecteduser])
 
   return (
-    <div onClick={()=>{setselecteduser(user); setselectedconvo(null)  }} className={`flex items-center gap-3 ${(selecteduser!==null && selecteduser._id==user._id) ? 'bg-blue-400 text-black' : 'hover:bg-slate-300 text-white hover:text-blue-400'}  p-2 rounded-md `}>
+    <div onClick={()=>{setselectedconvo(null); setselecteduser(user);}} className={`flex items-center gap-3 ${(selecteduser!==null && selecteduser._id==user._id) ? 'bg-blue-400 text-black' : 'hover:bg-slate-300 text-white hover:text-blue-400'}  p-2 rounded-md `}>
         <div className={`avatar ${isonline ? "online" : "ofline"}`}>
             <div className="w-14 rounded-full">
                 <img src={user.profilepic} />
