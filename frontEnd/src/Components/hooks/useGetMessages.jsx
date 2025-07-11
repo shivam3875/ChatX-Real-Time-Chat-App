@@ -10,7 +10,7 @@ const useGetMessages = () => {
     const getmessages= async (selectedid)=>{
 
     if(selectedid==null)  return;
-
+    setselectedconvo(null);
     setloading(true);
     try{
         const res= await fetch(`https://chatx-real-time-chat-app-backend.onrender.com/api/getmessage/${selectedid}`,{
@@ -23,7 +23,7 @@ const useGetMessages = () => {
             throw new Error(data.error);
         }
 
-        localStorage.setItem("selected-convo",JSON.stringify(data));
+        // localStorage.setItem("selected-convo",JSON.stringify(data));
         setselectedconvo(data);
         
     } catch(error){
