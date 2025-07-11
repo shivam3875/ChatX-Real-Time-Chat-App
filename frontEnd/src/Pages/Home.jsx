@@ -10,11 +10,8 @@ import { IoArrowBackOutline } from "react-icons/io5";
 
 const Home = () => {
 
-  const {authUser} = useAuthContext()
-  const {selecteduser,setselecteduser} = useSelectedUserContext()
-
-  useEffect(()=>{
-  },[selecteduser])
+  const {authUser} = useAuthContext();
+  const {selecteduser,setselecteduser} = useSelectedUserContext();
   
   return (
 
