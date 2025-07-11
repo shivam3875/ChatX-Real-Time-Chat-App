@@ -21,7 +21,7 @@ const useListenMessages = () => {
         return () => {
             socket?.off("message", handleMessage);
         };
-    }, [socket, setselectedconvo]);
+    }, [socket, selecteduser]);
 };
 
 export default useListenMessages;
