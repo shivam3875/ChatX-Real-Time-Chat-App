@@ -14,6 +14,7 @@ const ConversationCard = ({user}) => {
   const isonline=onlineusers.includes(user._id);
 
   useEffect(()=>{
+    setselectedconvo(null);
     getmessages(selecteduser?._id);
   },[selecteduser])
 
