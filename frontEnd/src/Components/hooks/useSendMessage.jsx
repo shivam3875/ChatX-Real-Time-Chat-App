@@ -2,10 +2,12 @@
 import { useState } from 'react';
 import toast from "react-hot-toast"
 import { useConversationsContext } from '../Context/ConversationContext';
+import sendvoice from '../../assets/send_sound.wav'
 
 const useSendMessage = () => {
   const [loading,setloading] = useState(false);
   const {selectedconvo,setselectedconvo} = useConversationsContext()
+  const sound=new Audio(sendvoice);
 
   const sendmessage= async (receiverid,message)=>{
 
@@ -26,6 +28,7 @@ const useSendMessage = () => {
       }
 
       setselectedconvo([...selectedconvo,data])
+      sound.play();
 
     } 
     catch(error){

@@ -19,6 +19,7 @@ export const SocketContextProvider = ({children}) =>{
     useEffect(()=>{
         if(authUser){
             const socket=io("https://chatx-real-time-chat-app-backend.onrender.com",{
+            // const socket=io("http://localhost:5000",{
                 query:{
                     userID:authUser._id,
                 }

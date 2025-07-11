@@ -2,10 +2,12 @@
 import { useState } from 'react';
 import toast from "react-hot-toast"
 import { useConversationsContext } from '../Context/ConversationContext';
+import sendvoice from '../../assets/send_sound.wav'
 
 const useSendImageMessage = () => {
   const [loading,setloading] = useState(false);
   const {selectedconvo,setselectedconvo} = useConversationsContext()
+  const sound= new Audio(sendvoice);
 
   const sendimagemessage= async (receiverid,file,message,setmessage,setimage)=>{
 
@@ -32,6 +34,7 @@ const useSendImageMessage = () => {
           throw new Error(data.error);
       }
       setselectedconvo([...selectedconvo,data])
+      sound.play();
 
     } 
     catch(error){
